@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stu</groupId>
+    <artifactId>first-dubbo-service</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>provider</module>
+        <module>api</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <module.version>1.0-SNAPSHOT</module.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.11</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.32.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>2.6.3</version>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+            <!--<dependency>-->
+                <!--<groupId>org.apache.zookeeper</groupId>-->
+                <!--<artifactId>zookeeper</artifactId>-->
+                <!--<version>3.5.2-alpha</version>-->
+                <!--<type>pom</type>-->
+            <!--</dependency>-->
+
+            <!--&lt;!&ndash; 配置个module 间的相互调用依赖&ndash;&gt;-->
+            <dependency>
+                <groupId>com.stu</groupId>
+                <artifactId>api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!--<dependency>-->
+                <!--<groupId>com.stu</groupId>-->
+                <!--<artifactId>provider</artifactId>-->
+                <!--<version>${module.version}</version>-->
+            <!--</dependency>-->
+        </dependencies>
+
+    </dependencyManagement>
+
+</project>
